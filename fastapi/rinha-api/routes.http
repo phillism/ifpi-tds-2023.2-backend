@@ -1,0 +1,31 @@
+@baseUrl = http://127.0.0.1:8030
+###
+
+# @name add-person
+POST {{baseUrl}}/pessoas
+
+{
+	"nome": "Felipe",
+	"apelido": "retacky",
+	"nascimento": "2004-01-01",
+	"stack": ["HTML, CSS e JS", "React JS", "Typescript", "Next JS"]
+}
+###
+
+
+# @name list-people
+GET {{baseUrl}}/pessoas
+
+
+###
+
+
+# @name get-person
+GET {{baseUrl}}/pessoas/{person_id}
+
+
+###
+
+
+# @name search-person-by-keyword
+GET {{baseUrl}}/pessoas?t={search}

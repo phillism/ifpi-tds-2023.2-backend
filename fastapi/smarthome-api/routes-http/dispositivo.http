@@ -1,0 +1,35 @@
+
+
+
+# @name obter-dispositivos
+GET http://127.0.0.1:8000/ambientes/2/dispositivos
+
+
+###
+
+
+# @name obter-dispositivo
+GET http://127.0.0.1:8000/ambientes/1/dispositivos/1
+
+
+### 
+
+
+# @name adicionar-dispositivo
+POST http://127.0.0.1:8000/ambientes/1/dispositivos
+
+{
+    "description": "teste2"
+}
+###
+
+
+# @name deletar-dispositivo
+DELETE http://127.0.0.1:8000/ambientes/1/dispositivos/3
+
+
+### 
+
+
+# @name mover-dispositivo
+PUT http://127.0.0.1:8000/ambientes/1/dispositivos/1/mover/2?origem_id=3

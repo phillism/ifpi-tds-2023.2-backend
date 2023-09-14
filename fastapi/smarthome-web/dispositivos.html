@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/ambiente_comportamento.js" defer></script>
+  <script src="assets/js/dispositivo_comportamento.js" defer></script>
+  <title>SmartHome</title>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <img src="assets/images/logo.webp" alt="Logo">
+      <h1>SmartHome: Ambientes Inteligentes</h1>
+    </header>
+    <main>
+      <h2 class="titulo">Carregando...</h2>
+      <nav class="nav-dispositivos">
+        <a class="botao-voltar" href="/"><img src="./assets/images/back-icon.svg" alt="Seta virada para a esquerda, indicando 'voltar'"></a>
+        <a class="botao botao-add-dispositivo" href="/forms/dispositivo.html">Novo dispositivo</a>
+      </nav>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Ícone</th>
+            <th>Estado</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="dispositivos">
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p>SmartHome: fim por fim feito por mim!</p>
+    </footer>
+  </div>
+  <div class="overlay">
+    <div class="content">
+      <h3>Mover dispositivo</h3>
+      <input type="hidden" name="dispositivo-id" id="dispositivo_id">
+      <label for="label_ambientes">Ambiente de destino:</label>
+  
+      <select id="label_ambientes">
+        <option value="...">Carregando...</option>
+      </select>
+
+      <div class="buttons">
+        <button onclick="mover()" class="botao">Mover</button>
+        <button onclick="cancelar_mover()" class="botao botao-cancelar">Cancelar</button>
+      </div>
+    </div>
+</body>
+</html>

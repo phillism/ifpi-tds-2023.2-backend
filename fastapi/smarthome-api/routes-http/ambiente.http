@@ -1,0 +1,42 @@
+
+
+
+# @name listar-ambientes
+GET http://127.0.0.1:8000/ambientes
+
+
+###
+
+
+# @name obter-ambiente
+GET http://127.0.0.1:8000/ambientes/1
+
+
+###
+
+
+# @name add-ambiente
+POST http://127.0.0.1:8000/ambientes
+
+{
+    "descricao": "."
+}
+
+###
+
+# @name atualizar-ambiente
+PUT http://127.0.0.1:8000/ambientes/1
+
+{
+    "descricao": "icon.png"
+}
+
+
+###
+
+
+# @name deletar-ambiente
+DELETE http://127.0.0.1:8000/ambientes/1
+
+###
+

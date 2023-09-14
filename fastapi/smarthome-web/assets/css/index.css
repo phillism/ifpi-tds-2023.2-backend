@@ -1,0 +1,244 @@
+:root{
+  --dark-bg-color: #263238;
+  --bg-color: #37474F;
+  --text-color: #ffffff;
+
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto';
+}
+
+#container{
+  border: 1px solid #848794;
+  max-width: 600px;
+  margin: .5rem auto;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 97vh;
+}
+
+header{
+  background: var(--dark-bg-color);
+
+  /* flex: 2; */
+  height: 80px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+main{
+  /* background: red; */
+  flex: 1;
+
+  padding-top: 1rem;
+}
+
+footer{
+  background: var(--dark-bg-color);
+  /* flex: 1; */
+  height: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img{
+  width: 80px;
+}
+
+header h1{
+ font-size: 1.3rem;
+ text-align: center;
+ flex: 1;
+}
+
+
+footer p{
+  font-size: 0.6rem;
+  font-style: italic;
+}
+
+
+main h2{
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+nav{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 1rem .5rem;
+}
+
+nav.nav-dispositivos {
+  justify-content: space-between;
+}
+
+table{
+  font-size: 0.7rem;
+  width: 100%;
+  padding: .25rem .5rem;
+}
+
+table tr{
+  height: 1.5rem;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #546E7A;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #3f515a;
+}
+
+table tbody td:first-child{
+  text-align: center;
+}
+
+table tbody td {
+  padding: .5rem;
+}
+
+.botao{
+  background: #ECEFF1;
+  color: var(--dark-bg-color);
+  text-decoration: none;
+  padding: 4px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.botao-add-dispositivo {
+  margin-top: 1rem;
+}
+
+.botao:hover{
+  background: #c5c8ca;
+}
+
+.botao-voltar {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color:rgb(255, 43, 43);
+  text-decoration: underline;
+}
+
+.botao-voltar img {
+  width: 25px;
+}
+
+.th-acoes {
+  width: 50%;
+}
+
+.td-acoes {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.botao-table{
+  border-radius: 2px;
+  padding: 2px 6px;
+  display: block;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+
+  transition: 200ms background-color;
+  text-decoration: none;
+}
+
+.botao-remover-table {
+  background: rgb(255, 43, 43);
+  color: rgb(255, 225, 225);
+}
+
+.botao-remover-table:hover{
+  background: rgb(218, 28, 28);
+}
+
+.botao-mover-table {
+  background: #f78b10;
+  color: rgb(255, 225, 225);
+}
+
+.botao-mover-table:hover{
+  background: #dd8725;
+}
+
+.botao-dispositivos-table {
+  background: #392bff;
+  color: rgb(255, 225, 225);
+}
+
+.botao-dispositivos-table:hover{
+  background: #3125db;
+}
+
+input {
+  padding: .25rem;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000a2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}
+
+.overlay .content {
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #6d6d6d;
+}
+
+.overlay .content h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.overlay .content .buttons {
+  margin-top: 1rem;
+}
+
+.overlay .content select {
+  color: rgb(129, 129, 129);
+  display: block;
+  width: 100%;
+}
