@@ -1,4 +1,5 @@
 from typing import Optional
+import uuid
 from fastapi import APIRouter, HTTPException
 from application.user_service import PersonService
 from presentation.models.person_model import Person, PersonInput
@@ -18,7 +19,7 @@ def get_people(t: Optional[str] = None):
     return person_service.get_people()
 
 @router.get('/{person_id}', status_code=200)
-def get_person(person_id):
+def get_person(person_id: uuid.UUID):
     found_person = person_service.find_person_by_id(person_id)
 
     if not found_person:
