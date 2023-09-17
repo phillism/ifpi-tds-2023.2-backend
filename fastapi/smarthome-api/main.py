@@ -14,7 +14,7 @@ app = FastAPI()
 # Ativar CORS
 origins = ['http://localhost:5500',
            'http://127.0.0.1:5500',
-           'https://smarthome-web.onrender.com']
+           'https://smarthome-web-8sqp.onrender.com']
 
 app.add_middleware(
     CORSMiddleware,
