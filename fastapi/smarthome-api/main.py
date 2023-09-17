@@ -4,11 +4,7 @@ from sqlmodel import SQLModel
 
 from persistence.utils import obter_engine
 from presentation.controllers.ambientes_controller import \
-    prefix as ambientes_prefix
-from presentation.controllers.ambientes_controller import \
     router as ambientes_router
-from presentation.controllers.dispositivos_controller import \
-    prefix as dispositivos_prefix
 from presentation.controllers.dispositivos_controller import \
     router as dispositivos_router
 from presentation.viewmodels.models import *
@@ -32,5 +28,5 @@ engine = obter_engine()
 SQLModel.metadata.create_all(engine)
 
 # Registrar Roteadores
-app.include_router(ambientes_router, prefix=ambientes_prefix)
-app.include_router(dispositivos_router, prefix=dispositivos_prefix)
+app.include_router(ambientes_router)
+app.include_router(dispositivos_router)

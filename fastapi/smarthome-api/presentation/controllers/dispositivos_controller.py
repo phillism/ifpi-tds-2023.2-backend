@@ -5,8 +5,7 @@ from application.ambientes_service import AmbienteService
 from persistence.utils import obter_engine
 from presentation.viewmodels.models import *
 
-router = APIRouter()
-prefix = '/ambientes/{ambiente_id}/dispositivos'
+router = APIRouter(prefix="/ambientes/{ambiente_id}/dispositivos", tags=["dispositivos"])
 
 engine = obter_engine()
 

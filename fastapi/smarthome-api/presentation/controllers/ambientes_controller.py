@@ -7,8 +7,7 @@ from presentation.viewmodels.models import *
 
 engine = obter_engine()
 
-router = APIRouter()
-prefix = '/ambientes'
+router = APIRouter(prefix='/ambientes', tags=["ambientes"])
 
 ambientes_service = AmbienteService()
 
