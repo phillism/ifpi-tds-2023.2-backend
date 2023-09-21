@@ -19,7 +19,7 @@ itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
 pipreqs==0.4.13
-psycopg2==2.9.7
+psycopg2-binary==2.9.7
 pydantic==1.10.12
 pydantic_core==2.6.3
 python-dotenv==1.0.0
