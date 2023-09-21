@@ -1,0 +1,12 @@
+
+# Nome da extensão compatível com este arquivo:
+# REST Client (from Huachao Mao)
+
+# @name simular-compra
+POST http://localhost:8000/simulacao-compra
+
+{
+    "quantidade": 2000,
+    "desconto": 30,
+    "bonus": 100
+}
