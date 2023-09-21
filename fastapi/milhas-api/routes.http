@@ -1,9 +1,8 @@
-
-# Nome da extensão compatível com este arquivo:
-# REST Client (from Huachao Mao)
+@baseUrl = https://milhas-api-r5nd.onrender.com
+###
 
 # @name simular-compra
-POST http://localhost:8000/simulacao-compra
+POST {{baseUrl}}/simulacao-compra
 
 {
     "quantidade": 2000,
