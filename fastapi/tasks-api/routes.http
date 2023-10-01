@@ -1,0 +1,64 @@
+@baseURL = http://localhost:8000
+
+
+# @name signup-account
+POST {{baseURL}}/auth/signup
+
+{
+	"username": "retacky",
+	"password": "123456"
+}
+
+###
+
+# @name signin-account
+POST {{baseURL}}/auth/signin
+
+{
+	"username": "retacky",
+	"password": "123456"
+}
+
+###
+
+# @name current-logged-account
+GET {{baseURL}}/auth/me
+Content-Type: application/json
+Authorization: Bearer TOKEN
+
+###
+
+# @name list-tasks
+GET {{baseURL}}/tasks
+Content-Type: application/json
+Authorization: Bearer TOKEN
+
+###
+
+# @name add-task
+POST {{baseURL}}/tasks
+Content-Type: application/json
+Authorization: Bearer TOKEN
+
+{
+	"name": "Eat with mom"
+}
+
+###
+
+# @name update-tasks
+PUT {{baseURL}}/tasks/TASK_ID
+Content-Type: application/json
+Authorization: Bearer TOKEN
+
+{
+	"name": "Go to school",
+	"done": true
+}
+
+###
+
+# @name delete-task
+DELETE {{baseURL}}/tasks/TASK_ID
+Content-Type: application/json
+Authorization: Bearer TOKEN
