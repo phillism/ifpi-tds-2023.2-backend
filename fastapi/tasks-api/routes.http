@@ -1,11 +1,12 @@
-@baseURL = http://localhost:8000
+@baseURL = https://tasks-api-t8m5.onrender.com
+# @baseURL = http://localhost:8000
 
 
 # @name signup-account
 POST {{baseURL}}/auth/signup
 
 {
-	"username": "retacky23",
+	"username": "retacky",
 	"password": "123456"
 }
 
@@ -38,7 +39,7 @@ Authorization: Bearer TOKEN
 # @name add-task
 POST {{baseURL}}/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhMzhjNzBkLTY5OWEtNDk1ZS1hOGJlLTBiNjE1MGQ2MDNmNSJ9.-38f8CfKlPKMQQFQ0jas7lVGksn6bTCJ4sEJGMwV0ds
+Authorization: Bearer TOKEN
 
 {
 	"name": "Eat with mom"
