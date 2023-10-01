@@ -5,7 +5,7 @@ from sqlmodel import Field, SQLModel
 import infrastructure.providers.hash_provider as hash_provider
 
 class User(SQLModel, table=True):
-	id: UUID = Field(primary_key=True, default_factory=uuid4)
+	id: str = Field(primary_key=True, default_factory=uuid4)
 	username: str = Field(unique=True, nullable=False, max_length=16)
 	password: str =  Field(nullable=False)
 
