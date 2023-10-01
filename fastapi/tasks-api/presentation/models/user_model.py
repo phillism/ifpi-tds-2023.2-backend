@@ -1,11 +1,11 @@
-from uuid import UUID, uuid4
+from uuid import uuid4
 from pydantic import BaseModel, validator
 from pydantic import Field as DanticField
 from sqlmodel import Field, SQLModel
 import infrastructure.providers.hash_provider as hash_provider
 
 class User(SQLModel, table=True):
-	id: str = Field(primary_key=True, default_factory=uuid4)
+	id: str = Field(default=None, primary_key=True)
 	username: str = Field(unique=True, nullable=False, max_length=16)
 	password: str =  Field(nullable=False)
 
@@ -17,12 +17,12 @@ class User(SQLModel, table=True):
 		)
 	
 	@validator('password')
-	def convert_password(cls, username):
-		return hash_provider.hash(username)
+	def convert_password(cls, password):
+		return hash_provider.hash(password)
 
 
 class UserOutput(BaseModel):
-	id: UUID
+	id: str
 	username: str
 
 class UserInput(BaseModel):

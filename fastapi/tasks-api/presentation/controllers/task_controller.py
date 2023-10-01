@@ -14,8 +14,8 @@ def list_tasks(current_user: User = Depends(handle_logged_user)):
 	return found_tasks
 
 @router.post('/')
-def list_tasks(task: TaskRead, current_user: User = Depends(handle_logged_user)):
-	created_task = task_repository.save(Task(**task.dict(), owner_id=str(current_user.id)))
+def add_tasks(task: TaskRead, current_user: User = Depends(handle_logged_user)):
+	created_task = task_repository.save(Task(**task.dict(), owner_id=current_user.id))
 
 	return created_task
 

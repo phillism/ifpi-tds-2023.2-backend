@@ -5,7 +5,7 @@
 POST {{baseURL}}/auth/signup
 
 {
-	"username": "retacky",
+	"username": "retacky23",
 	"password": "123456"
 }
 
@@ -38,7 +38,7 @@ Authorization: Bearer TOKEN
 # @name add-task
 POST {{baseURL}}/tasks
 Content-Type: application/json
-Authorization: Bearer TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhMzhjNzBkLTY5OWEtNDk1ZS1hOGJlLTBiNjE1MGQ2MDNmNSJ9.-38f8CfKlPKMQQFQ0jas7lVGksn6bTCJ4sEJGMwV0ds
 
 {
 	"name": "Eat with mom"

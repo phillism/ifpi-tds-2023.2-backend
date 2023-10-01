@@ -1,4 +1,4 @@
-from uuid import UUID
+from uuid import uuid4
 from fastapi import HTTPException
 from sqlmodel import Session, select
 from persistence.database import generate_engine
@@ -14,9 +14,6 @@ class TaskRepository:
 		return self.session.get(Task, task_id)
 	
 	def find_by_user(self, user_id: str) -> list[Task]:
-		if isinstance(user_id, UUID):
-			user_id = str(user_id)
-		
 		sttm = select(Task).where(Task.owner_id == user_id)
 
 		found_tasks = self.session.exec(sttm).fetchall()
@@ -25,6 +22,7 @@ class TaskRepository:
 		return found_tasks or []
 	
 	def save(self, task: Task) -> Task:
+		task.id = str(uuid4())
 		self.session.add(task)
 		self.session.commit()
 		self.session.refresh(task)

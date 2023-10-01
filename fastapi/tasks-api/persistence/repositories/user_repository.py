@@ -1,3 +1,4 @@
+from uuid import uuid4
 from fastapi import HTTPException
 from sqlmodel import Session, select
 from persistence.database import generate_engine
@@ -20,6 +21,7 @@ class UserRepository:
 		return found_user
 
 	def save(self, user: User):
+		user.id = str(uuid4())
 		if self.find_by_username(user.username):
 			raise HTTPException(400, 'User with this username already exists.')
 		
